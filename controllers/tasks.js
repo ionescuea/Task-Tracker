@@ -1,36 +1,66 @@
-import { v4 as uuidv4 } from 'uuid';
+import Task from '../models/Task.js';
 
-let tasks = [];
-
-export const createTask = (req, res) => {
-  const newTask = req.body;
-  tasks.push({ ...newTask, id: uuidv4() });
-  res.send(`Task "${newTask.title}" added successfully!`);
+// CREATE Task
+export const createTask = async (req, res) => {
+  try {
+    const newTask = new Task(req.body);
+    await newTask.save();
+    res.status(201).send(`Task "${newTask.title}" added successfully!`);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 };
 
-export const getTasks = (req, res) => {
-  res.json(tasks);
+// READ All Tasks
+export const getTasks = async (req, res) => {
+  try {
+    const tasks = await Task.find();
+    res.json(tasks);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 };
 
-export const getIdTask = (req, res) => {
-  const { id } = req.params;
-  const foundTask = tasks.find((task) => task.id === id);
-  res.send(foundTask);
+// READ Task by ID
+export const getIdTask = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const task = await Task.findById(id);
+    if (!task) return res.status(404).send('Task not found');
+    res.json(task);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 };
 
-export const deleteTask = (req, res) => {
-  const { id } = (req.params);
-  tasks = tasks.filter((task) => task.id !== id);
-  res.send(`Task with id ${id} deleted successfully!`);
+// DELETE Task
+export const deleteTask = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deleted = await Task.findByIdAndDelete(id);
+    if (!deleted) return res.status(404).send('Task not found');
+    res.send(`Task with id ${id} deleted successfully!`);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 };
 
-export const updateTask = (req, res) => {
-  const { id } = (req.params);
-  const { status } = req.body;
+// UPDATE Task
+export const updateTask = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { status } = req.body;
 
-  const statusUpdate = tasks.find((task) => task.id === id);
-  if (status) {
-    statusUpdate.status = status;
+    const task = await Task.findById(id);
+    if (!task) return res.status(404).send('Task not found');
+
+    if (status) {
+      task.status = status;
+      await task.save();
+    }
+
     res.send(`Task with id ${id} updated successfully!`);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
 };
