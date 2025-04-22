@@ -3,11 +3,16 @@ import bodyParser from 'body-parser';
 import tasksRouter from './routes/tasks.js'; // Import the tasks router
 import dotenv from 'dotenv';
 import connectDB from './db.js';
+import cors from 'cors';
 
+
+// Enable CORS for all requests
 dotenv.config();
 
 const app = express();
 const PORT = 5000;
+
+app.use(cors());
 
 connectDB();
 
