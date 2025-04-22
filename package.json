@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0",
+    "task-tracker": "file:",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
