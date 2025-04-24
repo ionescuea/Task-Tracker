@@ -4,8 +4,8 @@ A full-stack task management application built with React and Node.js + Express.
 
 ## Project structure
 
-- client/      # React frontend
-- server/      # Express backend
+- client/|React frontend
+- server/|Express backend
 
 ## Features
 
@@ -19,22 +19,19 @@ A full-stack task management application built with React and Node.js + Express.
 
 1. Start the backend server
 
-- cd server
-- npm install
-- npm start (server runs at: http://localhost:5000)
+  - cd server
+  - npm install
+  - npm start (server runs at: http://localhost:5000)
 
 2. Start the frontend client
 
-- cd client
-- npm install
-- npm start (server runs at: http://localhost:3000)
+  - cd client
+  - npm install
+  - npm start (server runs at: http://localhost:3000)
 
 ## Tech stack
 
 - Frontend: React, React Bootstrap, Axios
-
 - Backend: Node.js, Express, CORS
-
 - Database: MongoDB + Mongoose
-
 - Environment Variables: stored in .env
