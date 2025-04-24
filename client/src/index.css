@@ -12,6 +12,6 @@ code {
     monospace;
 }
 button:hover {
-  transform: scale(1.1); /* Slightly increase button size on hover */
-  transition: transform 0.2s ease-in-out; /* Smooth transition */
+  transform: scale(1.1); 
+  transition: transform 0.2s ease-in-out; 
 }

@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import tasksRouter from './routes/tasks.js'; // Import the tasks router
+import tasksRouter from './routes/tasksRoutes.js'; // Import the tasks router
 import dotenv from 'dotenv';
 import connectDB from './db.js';
 import cors from 'cors';

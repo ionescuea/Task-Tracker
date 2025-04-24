@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Button } from 'react-bootstrap';
-import NewTaskForm from './NewTaskForm';
-import TaskItem from './TaskItem';
-import TaskDetailsModal from './TaskDetailsModal';
+import NewTaskForm from './components/NewTaskForm';
+import TaskItem from './components/TaskItem';
+import TaskDetailsModal from './components/TaskDetailsModal';
 import axios from 'axios';
 
 const App = () => {
