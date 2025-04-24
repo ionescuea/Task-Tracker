@@ -1,6 +1,5 @@
 # Task Tracker - Client
 
-
 This is the **React** frontend of the Task Tracker app.
 
 It allows users to:
@@ -13,9 +12,10 @@ It allows users to:
 
 # Getting Started with Create React App
 
+This project was bootstrapped with Create React App.
+
 ### 1. Install Dependencies
 
-bash
 cd client
 npm install
 
@@ -23,3 +23,16 @@ npm install
 
 npm start
 This will start the React app at http://localhost:3000
+
+# API Usage
+
+This App communicates with the backend via: http://localhost:5000/api/tasks
+Note: Make sure the server is running before using the app!
+
+# Tech stack
+
+React
+
+React Bootstrap
+
+Axios
