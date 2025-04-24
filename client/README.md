@@ -12,18 +12,15 @@ It allows users to:
 
 ## Getting Started with Create React App
 
-This project was bootstrapped with Create React App.
-
-### 1. Install Dependencies
+1. Navigate to the `client/` directory:
 
 - cd client
+
+2. Install dependencies:
+
 - npm install
 
-### 2. Start the Development Server
-
-- npm start
-
-This will start the React app at http://localhost:3000
+3. Server runs on: http://localhost:3000
 
 ## API Usage
 
