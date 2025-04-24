@@ -12,14 +12,13 @@ This is the **Node.js + Express** backend server for the Task Tracker app.
 
 1. Navigate to the `server/` directory:
 
-cd server
+- cd server
 
 2. Install dependencies:
 
-bash
-npm install
-npm start
-Server runs on: http://localhost:5000
+- npm install
+
+3. Server runs on: http://localhost:5000
 
 ## API Routes
 
