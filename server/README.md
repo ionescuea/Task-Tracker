@@ -2,7 +2,7 @@
 
 This is the **Node.js + Express** backend server for the Task Tracker app.
 
-### Features
+## Features
 
 - Create, read, update, delete tasks
 - RESTful API endpoints
@@ -21,7 +21,7 @@ npm install
 npm start
 Server runs on: http://localhost:5000
 
-### API Routes
+## API Routes
 
 |Method|Route|Description|
 |:-----|-----|-----------|
@@ -32,10 +32,11 @@ Server runs on: http://localhost:5000
 |DELETE|/api/tasks/:id|Delete a task|
 
 ## Tech Stack
-Node.js
 
-Express
+- Node.js
 
-CORS
+- Express
 
-MongoDB + Mongoose
+- CORS
+
+- MongoDB + Mongoose
