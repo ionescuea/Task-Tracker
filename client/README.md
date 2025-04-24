@@ -10,29 +10,30 @@ It allows users to:
 - Delete tasks with confirmation
 - Interact with the backend through API calls
 
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with Create React App.
 
 ### 1. Install Dependencies
 
-cd client
-npm install
+- cd client
+- npm install
 
 ### 2. Start the Development Server
 
-npm start
+- npm start
+
 This will start the React app at http://localhost:3000
 
-# API Usage
+## API Usage
 
 This App communicates with the backend via: http://localhost:5000/api/tasks
 Note: Make sure the server is running before using the app!
 
-# Tech stack
+## Tech stack
 
-React
+- React
 
-React Bootstrap
+- React Bootstrap
 
-Axios
+- Axios
