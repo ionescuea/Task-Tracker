@@ -1,4 +1,4 @@
-# Task Tracker - Client
+# Task Tracker - Frontend (React)
 
 This is the **React** frontend of the Task Tracker app.
 
