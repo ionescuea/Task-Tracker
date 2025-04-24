@@ -73,12 +73,10 @@ const App = () => {
         onClick={handleShowModal}
         style={{
           position: 'fixed',
-          top: '25px',             // Adjust position from the top
-          right: '120px',           // Adjust position from the right
-          // borderRadius: '50%',     // Make the button round
-          // padding: '15px 25px',    // Add padding to make the button larger
-          fontSize: '16px',        // Slightly larger font size
-          boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)',  // Add shadow for effect
+          top: '25px',
+          right: '120px',
+          fontSize: '16px',
+          boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)',
           zIndex: 9999,
         }}
       >

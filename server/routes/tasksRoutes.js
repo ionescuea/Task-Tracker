@@ -3,25 +3,19 @@ import { createTask, getTasks, getIdTask, deleteTask, updateTask } from '../cont
 
 const router = express.Router();
 
-// Define the routes for tasks
-// GET /api/tasks - Get all tasks
+// Get all tasks
 router.get('/', getTasks);
 
-// POST /api/tasks - Create a new task
-// The request body should contain the task details
+// Create a new task
 router.post('/', createTask);
 
-// GET /api/tasks/:id - Get a task by ID
-// The :id parameter in the URL will be replaced with the actual task ID
+// Get a task by ID
 router.get('/:id', getIdTask);
 
-// DELETE /api/tasks/:id - Delete a task by ID
-// The :id parameter in the URL will be replaced with the actual task ID
-// This route will remove the task from the list of tasks
+// Delete a task by ID
 router.delete('/:id', deleteTask);
 
-// PATCH /api/tasks/:id - Update a task by ID
-// The :id parameter in the URL will be replaced with the actual task ID
+// Update a task by ID
 router.patch('/:id', updateTask);
 
 export default router;
