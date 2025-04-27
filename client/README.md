@@ -20,7 +20,10 @@ It allows users to:
 
 - npm install
 
-3. Server runs on: http://localhost:3000
+3. Start server:
+
+- npm start
+- server runs on: http://localhost:3000
 
 ## API Usage
 
