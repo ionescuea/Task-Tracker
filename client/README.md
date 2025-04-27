@@ -24,7 +24,7 @@ It allows users to:
 
 ## API Usage
 
-This App communicates with the backend via: http://localhost:5000/api/tasks
+This App communicates with the backend via: http://localhost:5001/api/tasks
 Note: Make sure the server is running before using the app!
 
 ## Tech stack

@@ -21,7 +21,7 @@ A full-stack task management application built with React and Node.js + Express.
 
   - cd server
   - npm install
-  - npm start (server runs at: http://localhost:5000)
+  - npm start (server runs at: http://localhost:5001)
 
 2. Start the frontend client
 

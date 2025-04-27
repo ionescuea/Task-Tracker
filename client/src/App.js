@@ -14,7 +14,7 @@ const App = () => {
 
   const handleSaveTask = async (task) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/tasks', task);
+      const response = await axios.post('http://localhost:5001/api/tasks', task);
       setTasks([...tasks, response.data]);
       handleCloseModal();
     } catch (error) {
@@ -33,7 +33,7 @@ const App = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/tasks');
+        const res = await axios.get('http://localhost:5001/api/tasks');
         setTasks(res.data);
       } catch (err) {
         console.error('Error fetching tasks:', err);

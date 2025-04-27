@@ -20,7 +20,7 @@ const TaskItem = ({ task, onStatusUpdate, onClick }) => {
 
   const handleConfirmUpdate = async () => {
     try {
-      await axios.patch(`http://localhost:5000/api/tasks/${task._id}`, {
+      await axios.patch(`http://localhost:5001/api/tasks/${task._id}`, {
         status: tempStatus,
       });
       setStatus(tempStatus);

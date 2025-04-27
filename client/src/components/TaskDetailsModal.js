@@ -14,7 +14,7 @@ const TaskDetailsModal = ({ show, handleClose, taskId, onTaskUpdated, onTaskDele
     const fetchTask = async () => {
       if (taskId && show) {
         try {
-          const res = await axios.get(`http://localhost:5000/api/tasks/${taskId}`);
+          const res = await axios.get(`http://localhost:5001/api/tasks/${taskId}`);
           const taskData = res.data;
           setTitle(taskData.title || '');
           setDescription(taskData.description || '');
@@ -39,7 +39,7 @@ const TaskDetailsModal = ({ show, handleClose, taskId, onTaskUpdated, onTaskDele
 
   const handleConfirmedDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/tasks/${taskId}`);
+      await axios.delete(`http://localhost:5001/api/tasks/${taskId}`);
       onTaskDeleted(taskId);
       setShowDeleteConfirm(false); 
       handleClose();
@@ -56,7 +56,7 @@ const TaskDetailsModal = ({ show, handleClose, taskId, onTaskUpdated, onTaskDele
   
     try {
       const updatedTask = { title, description, status };
-      const response = await axios.patch(`http://localhost:5000/api/tasks/${taskId}`, updatedTask);
+      const response = await axios.patch(`http://localhost:5001/api/tasks/${taskId}`, updatedTask);
       onTaskUpdated(taskId, response.data); 
       setShowSaveConfirm(false);
       handleClose(); 
