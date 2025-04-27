@@ -2,6 +2,8 @@
 
 This is the **Node.js + Express** backend server for the Task Tracker app.
 
+*Note: The `.env` file is enabled for testing purposes. The `MONGO_URI` key is temporary.*
+
 ## Features
 
 - Create, read, update, delete tasks
