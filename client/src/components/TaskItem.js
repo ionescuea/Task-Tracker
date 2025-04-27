@@ -47,6 +47,7 @@ const TaskItem = ({ task, onStatusUpdate, onClick }) => {
             {task.title}
           </Card.Title>
           <Card.Text>{task.description}</Card.Text>
+          <Card.Text>Due Date: {new Date(task.dueDate).toLocaleString()}</Card.Text>
 
           <Form.Select value={tempStatus} onChange={handleStatusChange}>
             <option value="pending">Pending</option>

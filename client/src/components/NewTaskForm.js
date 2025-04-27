@@ -6,6 +6,7 @@ const NewTaskForm = ({ show, handleClose, handleSave }) => {
   const [task, setTask] = useState({
     title: '',
     description: '',
+    dueDate: new Date().toLocaleString('sv-SE').slice(0, 16).replace('T', ' '),
   });
 
   const handleInputChange = (e) => {
@@ -19,7 +20,7 @@ const NewTaskForm = ({ show, handleClose, handleSave }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleSave(task);
-    setTask({ title: '', description: '' }); 
+    setTask({ title: '', description: '', dueDate: new Date().toLocaleString('sv-SE').slice(0, 16).replace('T', ' ') });
   };
 
   return (
@@ -51,16 +52,26 @@ const NewTaskForm = ({ show, handleClose, handleSave }) => {
               required
             />
           </Form.Group>
-          <Button variant="primary" type="submit" className="mt-3">
-            Save
-          </Button>
+          <Form.Group controlId="taskDueDate" className="mt-3">
+            <Form.Label>Due Date</Form.Label>
+            <Form.Control
+              type="datetime-local"
+              name="dueDate"
+              value={task.dueDate}
+              onChange={handleInputChange}
+              required
+            />
+          </Form.Group>
+          <Modal.Footer>
+            <Button variant="primary" type="submit">
+              Save
+            </Button>
+            <Button variant="secondary" onClick={handleClose}>
+              Cancel
+            </Button>
+          </Modal.Footer>
         </Form>
       </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
-          Cancel
-        </Button>
-      </Modal.Footer>
     </Modal>
   );
 };

@@ -6,6 +6,7 @@ const TaskDetailsModal = ({ show, handleClose, taskId, onTaskUpdated, onTaskDele
   // const [task, setTask] = useState(null);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+  const [dueDate, setDueDate] = useState('');
   const [status, setStatus] = useState('');
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [showSaveConfirm, setShowSaveConfirm] = useState(false);
@@ -18,6 +19,7 @@ const TaskDetailsModal = ({ show, handleClose, taskId, onTaskUpdated, onTaskDele
           const taskData = res.data;
           setTitle(taskData.title || '');
           setDescription(taskData.description || '');
+          setDueDate(taskData.dueDate || '');
           setStatus(taskData.status || 'pending');
         } catch (error) {
           console.error('Failed to load task:', error);
@@ -49,13 +51,13 @@ const TaskDetailsModal = ({ show, handleClose, taskId, onTaskUpdated, onTaskDele
   };
 
   const handleConfirmedSave = async () => {
-    if (!title || !description || !status) {
+    if (!title || !description || !dueDate || !status) {
       alert('All fields must be filled out');
       return;
     }
   
     try {
-      const updatedTask = { title, description, status };
+      const updatedTask = { title, description, dueDate, status };
       const response = await axios.patch(`http://localhost:5001/api/tasks/${taskId}`, updatedTask);
       onTaskUpdated(taskId, response.data); 
       setShowSaveConfirm(false);
@@ -65,7 +67,6 @@ const TaskDetailsModal = ({ show, handleClose, taskId, onTaskUpdated, onTaskDele
     }
   };
   
-
   return (
     <>
       <Modal show={show} onHide={handleClose}>
@@ -89,6 +90,14 @@ const TaskDetailsModal = ({ show, handleClose, taskId, onTaskUpdated, onTaskDele
                 rows={3}
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group className="mt-3">
+              <Form.Label>Due Date</Form.Label>
+              <Form.Control
+                type="dateTime-local"
+                value={new Date(dueDate).toLocaleString('sv-SE').slice(0, 16).replace(' ', 'T')}
+                onChange={(e) => setDueDate(e.target.value)}
               />
             </Form.Group>
           </Form>
